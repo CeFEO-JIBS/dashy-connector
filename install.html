@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Install the Dashy Connector | Step-by-step</title>
+<meta name="description" content="Add the Dashy connector to Claude in a minute. Step-by-step instructions for Pro, Max, Team and Enterprise plans, plus how to verify it works.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="hdr">
+  <a class="brand" href="index.html" aria-label="Dashy Connector home">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="9" cy="16" r="3.2" fill="none" stroke="#4A908B" stroke-width="2"/>
+      <circle cx="23" cy="9" r="3.2" fill="none" stroke="#B7D7D2" stroke-width="2"/>
+      <circle cx="23" cy="23" r="3.2" fill="none" stroke="#f5a54b" stroke-width="2"/>
+      <path d="M11.7 14.6 20.3 10.4M11.7 17.4 20.3 21.6" stroke="#4A908B" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span class="wordmark">
+      <span class="wm-name">Dashy Connector</span>
+      <span class="wm-sub">Family Business Research</span>
+    </span>
+  </a>
+  <div class="hdr-right">An initiative of the <a href="https://www.wifu.de/en/wifu-foundation/">WIFU&nbsp;Foundation</a></div>
+</header>
+
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="install.html" aria-current="page">Install</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a class="nav-ext" href="https://fbdashboard.org" target="_blank" rel="noopener">FBDashboard&nbsp;↗</a>
+</nav>
+
+<main id="main">
+
+  <section class="hero" style="padding-bottom:18px">
+    <span class="eyebrow"><span aria-hidden="true">●</span> About one minute</span>
+    <h1 style="font-size:1.9rem;max-width:24ch">Add Dashy to Claude</h1>
+    <p>The connector is a remote MCP server. You add it once in Claude's settings, then enable it in any conversation. Here is the URL you will need:</p>
+    <div class="endpoint">
+      <span class="ep-label">MCP&nbsp;Server</span>
+      <code id="mcp-url">https://data.familybusiness.se/mcp</code>
+      <button class="copy" data-copy="#mcp-url" data-label="Copy">Copy</button>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:18px">
+    <div class="section-label">Pick your plan</div>
+    <div class="split">
+      <div class="plan">
+        <h3>Pro &amp; Max</h3>
+        <div class="plan-sub">Individual accounts</div>
+        <ol>
+          <li>Open <span class="kbd">Settings → Connectors</span>.</li>
+          <li>Click <em>Add custom connector</em>.</li>
+          <li>Paste the MCP server URL above.</li>
+          <li>Click <em>Add</em>, then sign in when prompted.</li>
+        </ol>
+      </div>
+      <div class="plan">
+        <h3>Team &amp; Enterprise</h3>
+        <div class="plan-sub">Managed by an owner</div>
+        <ol>
+          <li>An Owner opens <span class="kbd">Organization settings → Connectors</span>.</li>
+          <li>Chooses <em>Add custom connector</em> and pastes the URL.</li>
+          <li>Saves it for the organisation.</li>
+          <li>Each member then connects individually and signs in.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="callout">
+      <p><strong>Custom connectors are a Claude feature on Pro, Max, Team and Enterprise plans.</strong> The remote MCP server URL must use HTTPS — Dashy already does. New connectors are added from the web app or desktop app; the mobile apps can use a connector you have already added, but cannot add new ones.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Step by step</div>
+    <div class="steps">
+      <div class="step">
+        <div class="num"></div>
+        <div class="body">
+          <h3>Open Connectors in settings</h3>
+          <p>On Pro or Max, go to <span class="kbd">Settings → Connectors</span>. On Team or Enterprise, an Owner does this under <span class="kbd">Organization settings → Connectors</span>.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div class="body">
+          <h3>Add a custom connector</h3>
+          <p>Click <em>Add custom connector</em> at the bottom of the Connectors section, then paste the Dashy MCP server URL:</p>
+          <div class="codeblock">
+            <button class="copy" data-copy="#mcp-url-2" data-label="Copy">Copy</button>
+            <pre id="mcp-url-2">https://data.familybusiness.se/mcp</pre>
+          </div>
+          <p>You can leave the transport and icon fields at their defaults. Then click <em>Add</em>.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div class="body">
+          <h3>Sign in to authorise</h3>
+          <p>Claude will open a sign-in step to authorise the connection. This grants Claude read access to the research dataset on your behalf — Claude never sees your password, and you can revoke access at any time by disconnecting the connector.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div class="body">
+          <h3>Enable it in a conversation</h3>
+          <p>In a chat, use the <span class="kbd">+</span> button near the message box, open <em>Connectors</em>, and switch on Dashy. Connectors are toggled per conversation, so you decide when Claude can reach the dataset.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div class="body">
+          <h3>Try a first question</h3>
+          <p>Ask something the dataset can answer, for example:</p>
+          <div class="codeblock">
+            <button class="copy" data-copy="#try-q" data-label="Copy">Copy</button>
+            <pre id="try-q">Using Dashy, how many family business papers were published
+on succession since 2020, and who are the five most prolific
+authors on that topic?</pre>
+          </div>
+          <p>If Claude returns counts and a ranked list of authors, the connector is working.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">If something is off</div>
+    <div class="faq">
+      <details>
+        <summary>The connector doesn't appear in my chat <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans"><p>Connectors are enabled per conversation. Open the <span class="kbd">+</span> menu near the message box, choose <em>Connectors</em>, and toggle Dashy on. On Team and Enterprise plans, an Owner must add the connector for the organisation before members can see it.</p></div>
+      </details>
+      <details>
+        <summary>I can't add a connector <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans"><p>Custom connectors are available on Pro, Max, Team and Enterprise. They are added from the web or desktop app, not from the mobile apps. If you are on a Team or Enterprise plan, only an Owner can add a new connector.</p></div>
+      </details>
+      <details>
+        <summary>Sign-in failed or I need to reconnect <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans"><p>Remove the connector in <span class="kbd">Settings → Connectors</span> and add it again with the URL above. If the sign-in step still fails, the dataset may be in a maintenance window — <a href="contact.html">get in touch</a> and we'll check.</p></div>
+      </details>
+      <details>
+        <summary>I'm being rate-limited <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans"><p>Access is paced per user to keep capacity fair during the pilot. For larger or systematic searches, <a href="contact.html">reach out</a> and we'll talk through options.</p></div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="brand-footer">
+  <a href="https://www.wifu.de/en/wifu-foundation/" aria-label="WIFU Foundation"><img src="https://fbdashboard.org/logo2.png" alt="WIFU Foundation"></a>
+  <div class="bf-text">An initiative by <a href="https://www.wifu.de/en/wifu-foundation/">WIFU Foundation</a>, powered by <a href="https://ju.se/center/cefeo">CeFEO</a></div>
+</footer>
+<div class="foot-meta">This website does not use cookies · <a href="contact.html">Contact</a> · <a href="https://fbdashboard.org" target="_blank" rel="noopener">FBDashboard.org</a></div>
+
+<script src="app.js"></script>
+</body>
+</html>

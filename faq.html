@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>FAQ | Dashy Connector</title>
+<meta name="description" content="Frequently asked questions about the Dashy connector: what it is, where the data comes from, how it differs from the web Ask box, privacy, and access during the pilot.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="hdr">
+  <a class="brand" href="index.html" aria-label="Dashy Connector home">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="9" cy="16" r="3.2" fill="none" stroke="#4A908B" stroke-width="2"/>
+      <circle cx="23" cy="9" r="3.2" fill="none" stroke="#B7D7D2" stroke-width="2"/>
+      <circle cx="23" cy="23" r="3.2" fill="none" stroke="#f5a54b" stroke-width="2"/>
+      <path d="M11.7 14.6 20.3 10.4M11.7 17.4 20.3 21.6" stroke="#4A908B" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span class="wordmark">
+      <span class="wm-name">Dashy Connector</span>
+      <span class="wm-sub">Family Business Research</span>
+    </span>
+  </a>
+  <div class="hdr-right">An initiative of the <a href="https://www.wifu.de/en/wifu-foundation/">WIFU&nbsp;Foundation</a></div>
+</header>
+
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="install.html">Install</a>
+  <a href="faq.html" aria-current="page">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a class="nav-ext" href="https://fbdashboard.org" target="_blank" rel="noopener">FBDashboard&nbsp;↗</a>
+</nav>
+
+<main id="main">
+
+  <section class="hero" style="padding-bottom:14px">
+    <h1 style="font-size:1.9rem">Questions &amp; answers</h1>
+    <p>What the connector is, where the data comes from, and how to use it well.</p>
+  </section>
+
+  <section class="section" style="padding-top:8px">
+    <div class="faq">
+
+      <details open>
+        <summary>What is the Dashy connector? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans">
+          <p>It is a remote connector — built on the Model Context Protocol (MCP) — that lets Claude query the family business research literature directly. Once added, Claude can search the corpus, rank scholars, institutions and journals, and assemble references, all from inside your own conversation.</p>
+          <p>It draws on the same dataset as the <a href="https://fbdashboard.org" target="_blank" rel="noopener">Family Business Research Dashboard</a>, but it is a separate, standalone way in.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Who is it for? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans">
+          <p>Researchers, doctoral students, editors, and anyone mapping the family business field who would rather ask questions than click through a dashboard. It is most useful when you want to chain questions, combine the literature with your own notes or drafts, or pull material straight into something you are writing.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How is it different from the Ask box on fbdashboard.org? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans">
+          <p>The <a href="https://fbdashboard.org/ask.html" target="_blank" rel="noopener">web Ask box</a> answers a single question at a time in the browser. The connector puts the same dataset inside your own Claude session, so you can ask follow-ups, mix it with your documents, and keep the thread of an investigation across many questions.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Where does the data come from? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans">
+          <p>Every article is retrieved from <a href="https://openalex.org" target="_blank" rel="noopener">OpenAlex</a>, an open scholarly catalogue. Records are then processed through an AI-assisted pipeline that classifies each paper by topic, theory, method, and country context, and journals are tagged with their AJG rating. The dataset spans roughly 9,500 publications from 1988 onward.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What can it actually answer? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans">
+          <p>Questions grounded in the catalogue: how large a research stream is, who publishes most on a topic, which journals carry the work, the most-cited papers on a theme, who is active at a given institution, the classification scheme itself, and bibliographic metadata for a set of papers. It is built to give an overview of the field and surface core references — not to replace a systematic literature review.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Are the answers reliable? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans">
+          <p>Results come from titles, abstracts and keywords rather than full texts, and the classification is AI-assisted, so treat answers as a well-grounded starting point and verify anything load-bearing against the original sources. The connector is designed to help you find the field's shape and its core references quickly.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What does it cost? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans">
+          <p>The connector is in a pilot phase. Access terms during the pilot are arranged case by case — <a href="contact.html">get in touch</a> and we'll set you up. You will also need a Claude plan that supports custom connectors (Pro, Max, Team or Enterprise).</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is there a usage limit? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans">
+          <p>Yes — requests are paced per user so capacity stays fair across everyone trying it. Normal exploratory use is comfortably within the limits. For larger or systematic searches, <a href="contact.html">reach out</a> and we'll discuss options.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What about privacy and security? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans">
+          <p>Authentication uses a standard sign-in step; Claude never sees your password, and you can disconnect at any time from Claude's connector settings. The connector has read access to the research dataset only. This website itself sets no cookies and does no tracking.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Which apps can use it? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans">
+          <p>Any client that supports remote MCP connectors. In Claude that includes the web app, the desktop app, and — once added on the web — the mobile apps. The <a href="install.html">installation guide</a> covers the steps.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Who is behind it? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans">
+          <p>Like the dashboard, the connector is an initiative of the <a href="https://www.wifu.de/en/wifu-foundation/" target="_blank" rel="noopener">WIFU Foundation</a>, powered by the Centre for Family Entrepreneurship and Ownership (CeFEO) at Jönköping International Business School.</p>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="callout" style="margin-top:24px">
+      <p>Still have a question? <a href="contact.html">Contact us</a> — we read everything that comes in during the pilot.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="brand-footer">
+  <a href="https://www.wifu.de/en/wifu-foundation/" aria-label="WIFU Foundation"><img src="https://fbdashboard.org/logo2.png" alt="WIFU Foundation"></a>
+  <div class="bf-text">An initiative by <a href="https://www.wifu.de/en/wifu-foundation/">WIFU Foundation</a>, powered by <a href="https://ju.se/center/cefeo">CeFEO</a></div>
+</footer>
+<div class="foot-meta">This website does not use cookies · <a href="contact.html">Contact</a> · <a href="https://fbdashboard.org" target="_blank" rel="noopener">FBDashboard.org</a></div>
+
+<script src="app.js"></script>
+</body>
+</html>
