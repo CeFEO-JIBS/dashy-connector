@@ -172,7 +172,8 @@ code.inline{font-family:'JetBrains Mono',monospace;font-size:.8em;background:var
 
 /* ---------- Footer ---------- */
 .brand-footer{max-width:var(--maxw);margin:46px auto 0;padding:28px 40px;border-top:1px solid var(--bdr);
-  display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;text-align:center}
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center}
+.brand-footer .bf-logos{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
 .brand-footer img{height:48px;width:auto;opacity:.85;transition:opacity .15s}
 .brand-footer .bf-cefeo{height:56px}
 .brand-footer a:hover img{opacity:1}
