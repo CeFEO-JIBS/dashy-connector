@@ -174,6 +174,7 @@ code.inline{font-family:'JetBrains Mono',monospace;font-size:.8em;background:var
 .brand-footer{max-width:var(--maxw);margin:46px auto 0;padding:28px 40px;border-top:1px solid var(--bdr);
   display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;text-align:center}
 .brand-footer img{height:48px;width:auto;opacity:.85;transition:opacity .15s}
+.brand-footer .bf-cefeo{height:56px}
 .brand-footer a:hover img{opacity:1}
 .brand-footer .bf-text{font-size:.8125rem;color:var(--txd);line-height:1.5}
 .foot-meta{max-width:var(--maxw);margin:0 auto;padding:14px 40px 36px;font-size:.6875rem;color:var(--txm);text-align:center}
