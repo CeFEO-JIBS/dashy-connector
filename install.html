@@ -50,7 +50,7 @@
         <ol>
           <li>Open <span class="kbd">Settings → Connectors</span>.</li>
           <li>Click <em>Add custom connector</em>.</li>
-          <li>Paste the MCP server URL above.</li>
+          <li>Paste the MCP server URL above and name the connector <strong>Dashy</strong>.</li>
           <li>Click <em>Add</em>, then sign in when prompted.</li>
         </ol>
       </div>
@@ -89,7 +89,7 @@
             <button class="copy" data-copy="#mcp-url-2" data-label="Copy">Copy</button>
             <pre id="mcp-url-2">https://mcp.fbdashboard.org/mcp</pre>
           </div>
-          <p>You can leave the transport and icon fields at their defaults. Then click <em>Add</em>.</p>
+          <p>Name the connector <strong>Dashy</strong> so it is easy to recognise later. You can leave the transport and icon fields at their defaults, then click <em>Add</em>.</p>
         </div>
       </div>
       <div class="step">
@@ -97,6 +97,13 @@
         <div class="body">
           <h3>Sign in to authorise</h3>
           <p>Claude will open a sign-in step to authorise the connection. This grants Claude read access to the research dataset on your behalf — Claude never sees your password, and you can revoke access at any time by disconnecting the connector.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div class="body">
+          <h3>Allow Dashy's tools</h3>
+          <p>Open Dashy under <span class="kbd">Settings → Connectors</span>. In <em>Tool permissions</em> you will see Dashy's eight tools. Set them to <em>Always allow</em> so Claude can search the dataset without asking for approval on every question.</p>
         </div>
       </div>
       <div class="step">
@@ -113,11 +120,11 @@
           <p>Ask something the dataset can answer, for example:</p>
           <div class="codeblock">
             <button class="copy" data-copy="#try-q" data-label="Copy">Copy</button>
-            <pre id="try-q">Using Dashy, how many family business papers were published
-on succession since 2020, and who are the five most prolific
-authors on that topic?</pre>
+            <pre id="try-q">Using Dashy, how many family business papers address
+succession, and what are the main themes and the key
+references to start from?</pre>
           </div>
-          <p>If Claude returns counts and a ranked list of authors, the connector is working.</p>
+          <p>If Claude returns a paper count alongside themes and specific references, the connector is working.</p>
         </div>
       </div>
     </div>
