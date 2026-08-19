@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>Install the Dashy Connector | Step-by-step</title>
-<meta name="description" content="Add the Dashy connector to Claude in a minute. Step-by-step instructions for Pro, Max, Team and Enterprise plans, plus how to verify it works.">
+<meta name="description" content="Add the Dashy connector to Claude in a minute. Step-by-step instructions for Pro, Max, Team and Enterprise plans, how to verify it works, and how to add the optional Dashy skill.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -39,6 +39,7 @@
       <code id="mcp-url">https://mcp.fbdashboard.org/mcp</code>
       <button class="copy" data-copy="#mcp-url" data-label="Copy">Copy</button>
     </div>
+    <p class="endpoint-note">That is all you need. There is also an optional <a href="#skill">Dashy skill</a> you can add afterwards — it shapes how Claude answers with the data.</p>
   </section>
 
   <section class="section" style="padding-top:18px">
@@ -133,6 +134,68 @@ references?</pre>
     </div>
   </section>
 
+  <section class="section" id="skill">
+    <div class="section-label">Optional · Add the Dashy skill</div>
+    <h2 class="h">Give Claude Dashy's research manners</h2>
+    <p class="lead">The connector gives Claude the data. The <strong>skill</strong> gives Claude the method: report the state of the evidence rather than advise, name the theoretical lens behind a finding, cite only papers actually returned by the connector, and say so plainly when the evidence is thin. It is a small text file you upload once to your own Claude account. The connector works without it — the skill only changes how the answers read.</p>
+    <div class="btn-row" style="margin-top:22px">
+      <a class="btn btn-primary" href="dashy-connector-skill.zip" download>Download the skill (.zip)</a>
+      <a class="btn btn-ghost" href="https://github.com/CeFEO-JIBS/dashy-connector/blob/main/skill/dashy-connector/SKILL.md" target="_blank" rel="noopener">Read it first</a>
+    </div>
+    <p class="endpoint-note">Uploaded skills are private to your own account. Nothing is shared with us, and you can read the whole file before you install it.</p>
+
+    <div class="steps" style="margin-top:26px">
+      <div class="step">
+        <div class="num"></div>
+        <div class="body">
+          <h3>Download the file</h3>
+          <p>Use the button above. You get <code class="inline">dashy-connector-skill.zip</code> — keep it zipped, Claude expects the zip.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div class="body">
+          <h3>Open Skills in settings</h3>
+          <p>Go to <span class="kbd">Settings → Capabilities → Skills</span>. Depending on your plan and app version the section may be called <em>Features</em> or sit under <em>Customize</em>. Skills sit inside Claude's code-execution capability, so if you cannot find the section, switch on <em>Code execution and file creation</em> first.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div class="body">
+          <h3>Upload and switch it on</h3>
+          <p>Choose <em>Upload skill</em>, select the zip, and toggle <strong>dashy-connector</strong> on. Custom skills are available on Pro, Max, Team and Enterprise, and each person uploads their own copy — there is no organisation-wide rollout for skills, unlike the connector.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num"></div>
+        <div class="body">
+          <h3>Address Dashy by name</h3>
+          <p>With the connector enabled in the conversation, start your question with Dashy's name. The skill loads on its own from there.</p>
+          <div class="codeblock">
+            <button class="copy" data-copy="#try-skill-q" data-label="Copy">Copy</button>
+            <pre id="try-skill-q">Dashy, what does the research say about succession
+in family firms, and where do the findings disagree?</pre>
+          </div>
+          <p>If the connector is off, the skill will tell you so and stop rather than answer from general knowledge. That is deliberate.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Can a link install it for you?</strong> Not today. Claude has no “install this skill” link that a website can trigger — a skill is added in your own account settings, and nothing on this page can reach into them. The download button above is the shortest honest path. It also means you can read the file before installing it, which is worth doing for any skill you get from the internet.</p>
+    </div>
+    <div class="callout">
+      <p><strong>Using Claude Code?</strong> Skills there are plain files on your machine. One line installs it:</p>
+      <div class="codeblock">
+        <button class="copy" data-copy="#cc-install" data-label="Copy">Copy</button>
+        <pre id="cc-install">mkdir -p ~/.claude/skills/dashy-connector && curl -fsSL \
+  https://claude.fbdashboard.org/skill/dashy-connector/SKILL.md \
+  -o ~/.claude/skills/dashy-connector/SKILL.md</pre>
+      </div>
+      <p>Then add the connector with <code class="inline">claude mcp add --transport http Dashy https://mcp.fbdashboard.org/mcp</code> and restart the session.</p>
+    </div>
+  </section>
+
   <section class="section">
     <div class="section-label">If something is off</div>
     <div class="faq">
@@ -147,6 +210,14 @@ references?</pre>
       <details>
         <summary>Sign-in failed or I need to reconnect <span class="chev" aria-hidden="true">›</span></summary>
         <div class="ans"><p>Remove the connector in <span class="kbd">Settings → Connectors</span> and add it again with the URL above. If the sign-in step still fails, the dataset may be in a maintenance window — <a href="contact.html">get in touch</a> and we'll check.</p></div>
+      </details>
+      <details>
+        <summary>I uploaded the skill but Claude doesn't sound like Dashy <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans"><p>Check three things: the skill is toggled on under <span class="kbd">Settings → Capabilities → Skills</span>, the Dashy connector is switched on in that particular conversation, and you addressed Dashy by name in your question. A skill loads when the question matches what it is for, so <em>“Dashy, what does the research say about…”</em> is the reliable opening.</p></div>
+      </details>
+      <details>
+        <summary>Can I send the skill to Claude with one click? <span class="chev" aria-hidden="true">›</span></summary>
+        <div class="ans"><p>No. A skill is installed in your own account settings, and no website — including this one — can write there on your behalf. Download the zip and upload it yourself; it takes about as long as adding the connector did. The upside is that you can read the file first, which is a good habit for any skill you get from the internet.</p></div>
       </details>
       <details>
         <summary>I'm being rate-limited <span class="chev" aria-hidden="true">›</span></summary>
